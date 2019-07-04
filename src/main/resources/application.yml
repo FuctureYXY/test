@@ -1,0 +1,46 @@
+ server: 
+    port: 8887
+ spring: 
+  profiles: 
+    active: test
+---
+ server: 
+   port: 8884
+ spring:
+   profiles: dev
+---
+ server:
+   port: 8885
+ spring:
+  profiles: test
+---
+
+stu: 
+  email: 112631dd32@qq.com
+  #xiaoming: xiaoming
+  #xiaoming: ${random.value} #随机数
+  xiaoming: ${student.user.name:不存在}  #配置文件中 相互引用  如果没有 则报错 student.user.name2:不存在  可以用它跳过异常
+  #name: zs
+  #age: 23
+  birthday: 2019/02/12
+  x: false
+  y: 111
+  z: 112
+  #location: 
+   # province: "福\n建"
+    #city: '泉\n州'
+    #zone: 安\n海
+  #{province: "福\n建",city: '泉\n州',zone: 安\n海} 行内写法
+  hobbies: 足球,篮球
+   # [足球,篮球]   #行内写法
+    # - 足球
+    # - 篮球
+  skills: 
+    [编程,金融 ]  #行内写法
+     #  - 编程
+     #  - 金融  
+  pet: 
+    #{nickName: wc,strain: hsq} #行内写法
+   # nickName: wc
+    #nick-name: wc
+    strain: hsq
